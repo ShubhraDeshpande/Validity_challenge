@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<center><h1> Validity Challenge	</h1></center>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #20bf6b;
+  color: white;
+}
+</style>
+
+<style>
+#customer {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customer td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+
+#customer tr:nth-child(even){background-color: #f2f2f2;}
+
+#customer tr:hover {background-color: #4b6584;}
+
+#customer th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4b6584;
+  color: white;
+}
+</style>
+
+
+
+
+
+	<title> Validity Deduplicates</title>
+</head>
+<body>
+
+
+<table id ="customer">
+	<tr align="center">
+		<td align ="center">Original records</td>
+		<td align = "center">Deduplicate records</td>
+		
+	</tr>
+	<tr align="center"><td align="center">{{original}}</td>
+		<td align="center">{{dup}}</td>
+</tr>
+</table>
+
+<table>
+	<th>
+<p><center>
+	Following are the deduplicate items
+</center></p>
+</th>
+</table>
+
+<table id="customers">
+<tr>
+	
+  <th>First Name</th>
+  <th>Last Name</th>
+  <th>Company</th>
+  <th>Email</th>
+  <th>Phone</th>
+  <th>City</th>
+  <th>Address1</th>
+  <th>Address2</th>
+  <th>State</th>
+  <th>Zip</th>
+</tr>
+{% for r in results %}
+<tr>
+	
+    <td>{{ r.first_name }}</td>
+    <td>{{ r.last_name }}</td>
+    <td>{{ r.company }}</td>
+    <td>{{ r.email }}</td>
+    <td>{{ r.phone }}</td>
+    <td>{{ r.city }}</td>
+    <td>{{ r.address1 }}</td>
+    <td>{{ r.address2 }}</td>
+    
+    <td>{{r.state_long}}</td>
+    <td>{{r.zip}}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+
+
+</body>
+</html>
